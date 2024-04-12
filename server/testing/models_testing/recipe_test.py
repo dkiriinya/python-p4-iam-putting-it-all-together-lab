@@ -68,7 +68,7 @@ class TestRecipe:
                 title="Generic Ham",
                 instructions="idk lol")
 
-            with pytest.raises(IntegrityError):
+            with pytest.raises(IntegrityError(None, None, 'Instructions must be at least 50 characters in length')):
                 db.session.add(recipe)
                 db.session.commit()
 
